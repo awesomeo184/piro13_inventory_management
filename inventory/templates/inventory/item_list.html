@@ -1,0 +1,11 @@
+{% extends 'inventory/layout.html' %}
+
+{% block content %}
+
+    {% for item in item_list %}
+        <a href="{% url 'inventory:item_detail' item.pk %}">
+            {{ item.title }}
+        </a>
+    {% endfor %}
+
+{% endblock %}

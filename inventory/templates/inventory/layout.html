@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory</title>
+</head>
+<body>
+{% block content %}
+{% endblock %}
+<hr/>
+<a href="{% url 'inventory:account_register' %}"><button>상품등록</button></a>
+<a href="{% url 'inventory:account_register' %}"><button>거래처등록</button></a>
+<a href="{% url 'inventory:account_list' %}"><button>거래처관리</button></a>
+</body>
+</html>
