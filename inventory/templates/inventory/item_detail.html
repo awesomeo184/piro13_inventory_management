@@ -1,10 +1,13 @@
 {% extends 'inventory/layout.html' %}
 {% block content %}
     <p>{{ item.title }}</p>
+    {% if item.image %}
+        <img src="{{ item.image.url }}" style="max-width: 15%"/>
+    {% endif %}
     <p>{{ item.price }}</p>
     <p>{{ item.amount }}</p>
     <p>{{ item.content }}</p>
-    <p>{{ item.account }}</p>
+    <p>거래처: {{ item.account }}</p>
 <a href="{% url 'inventory:item_update' item.pk %}"><button>수정</button></a>
 <a href="{% url 'inventory:item_delete' item.pk %}"><button>삭제</button></a>
 {% endblock %}

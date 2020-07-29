@@ -3,8 +3,14 @@
 {% block content %}
 
     {% for account in account_list %}
+        <div>
         <a href="{% url 'inventory:account_detail' account.pk %}">
             <p>{{ account.name }}</p>
         </a>
-    {% endfor %}
+        </div>
+        <div>{{ account.call }}</div>
+        <div>{{ account.address }}</div>
+
+        {% endfor %}
+
 {% endblock %}

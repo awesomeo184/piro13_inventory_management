@@ -1,15 +1,34 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Inventory</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="{% url 'inventory:item_list' %}">InventoryManager</a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'inventory:item_register' %}">상품등록 <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'inventory:account_register' %}">거래처 등록</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'inventory:account_list' %}">거래처관리</a>
+      </li>
+
+
+
+    </ul>
+  </div>
+</nav>
 {% block content %}
 {% endblock %}
-<hr/>
-<a href="{% url 'inventory:account_register' %}"><button>상품등록</button></a>
-<a href="{% url 'inventory:account_register' %}"><button>거래처등록</button></a>
-<a href="{% url 'inventory:account_list' %}"><button>거래처관리</button></a>
+
 </body>
 </html>

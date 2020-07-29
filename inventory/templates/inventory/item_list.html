@@ -3,9 +3,33 @@
 {% block content %}
 
     {% for item in item_list %}
-        <a href="{% url 'inventory:item_detail' item.pk %}">
-            {{ item.title }}
-        </a>
+
+        <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 box-shadow">
+            <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+                 <a href="{% url 'inventory:item_detail' item.pk %}">
+                {% if item.image %}
+                <li><img src='{{ item.image.url }}' style="max-width: 15%"/></li>
+                {% endif %}
+                <li><h3>{{ item.title }}</h3></li>
+                 </a>
+                <li>가격: {{ item.price }}</li>
+                <li>남은 수량: {{ item.amount }}</li>
+                <li>
+                    <button class="button">+</button>
+                    <button class="button">-</button>
+                </li>
+            </ul>
+          </div>
+        </div>
+
+        </div>
+
     {% endfor %}
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+
+</script>
 
 {% endblock %}
